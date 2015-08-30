@@ -4,6 +4,6 @@
 
 module.exports = function(app) {
 
-  app.set('appName', 'Hohy learns Node.js'); // Application name
+  app.locals.appName = 'Hohy learns Node.js'; // Application name
 
 }
