@@ -12,13 +12,13 @@ module.exports = function(app, passport) {
 
   passport.deserializeUser(function(obj, done) {
     done(null, obj);
-  });  
+  });
 
   // Facebook login
   passport.use(new FacebookStrategy({
-    clientID: app.get('configurations').facebook.clientID,
-    clientSecret: app.get('configurations').facebook.clientSecret,
-    callbackURL: app.get('configurations').facebook.callbackURL
+    clientID: process.env.FACEBOOK_CLIENT_ID,
+    clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+    callbackURL: process.env.FACEBOOK_CLIENT_CALLBACK_URL
     },
     // Verify callback for the facebook login
     function(accessToken, refreshToken, profile, done) {

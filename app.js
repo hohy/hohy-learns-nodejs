@@ -11,10 +11,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
-var configurations = require('./config/keys.json');
 var app = express();
-
-app.set('configurations', configurations); // let the config. be accessible everywhere
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
